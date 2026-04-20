@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import MascotFloat, { MASCOT_HOME } from '@/components/MascotFloat'
@@ -82,6 +82,8 @@ const checklistItems = [
 
 export default function HomePage() {
   const [tradePage, setTradePage] = useState(0)
+  const featuresIntroRef = useRef(null)
+  const isFeaturesIntroInView = useInView(featuresIntroRef, { once: true })
 
   return (
     <>
@@ -200,9 +202,12 @@ export default function HomePage() {
                   <Link href="#book-call" className="btn-primary text-base sm:text-lg px-9 py-4 sm:px-10 sm:py-4">
                     Book A Free Call
                   </Link>
-                  <Link href="#features" className="btn-ghost text-base sm:text-lg px-9 py-4 sm:px-10 sm:py-4">
+                  <a
+                    href="#features"
+                    className="btn-ghost text-base sm:text-lg px-9 py-4 sm:px-10 sm:py-4"
+                  >
                     See What&apos;s Included
-                  </Link>
+                  </a>
                 </div>
               </motion.div>
             </div>
@@ -243,15 +248,21 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURES (Format Inspo: one phone per row, alternating) ─ */}
-      <section id="features" className="relative z-0 scroll-mt-20 -mt-px">
+      <motion.section
+        ref={featuresIntroRef}
+        id="features"
+        className="relative z-0 scroll-mt-20 -mt-px"
+        initial={false}
+        animate={
+          isFeaturesIntroInView
+            ? { opacity: 1, y: 0 }
+            : { opacity: 0, y: 40 }
+        }
+        transition={{ duration: 0.6, ease: customEase }}
+      >
         <div className="relative flex min-h-[460px] flex-col overflow-x-clip md:min-h-[min(580px,72vh)]" style={{ background: 'linear-gradient(to bottom, #ffffff 0%, #ffffff 50%, #F0F4FF 100%)' }}>
           <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col items-center justify-center px-4 pb-5 pt-8 sm:px-6 sm:pb-6 sm:pt-10 lg:px-8 lg:pb-8 lg:pt-12">
-            <InViewMotion
-              className="flex w-full flex-col items-center justify-center text-center"
-              from={{ opacity: 0, y: 28 }}
-              to={{ opacity: 1, y: 0 }}
-              duration={0.55}
-            >
+            <div className="flex w-full flex-col items-center justify-center text-center">
               <h2 className="font-syne mx-auto mb-5 w-full text-center sm:mb-6">
                 <span
                   className="block text-[#0A0F1E]"
@@ -323,11 +334,11 @@ export default function HomePage() {
                   </svg>
                 </motion.span>
               </a>
-            </InViewMotion>
+            </div>
           </div>
         </div>
 
-      </section>
+      </motion.section>
 
       {/* ── FEATURE DETAIL SECTIONS (5 alternating device + content rows) ───── */}
       <FeatureDetailSections />
