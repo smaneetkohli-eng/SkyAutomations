@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react'
 import { InViewMotion } from '@/components/InViewMotion'
+import { Wrench, ShieldCheck, Star } from 'lucide-react'
 
 /* ─── Shared: blue-filled circle checkmark ─────────────────────────────────── */
 
@@ -144,9 +145,9 @@ function SmsScreen({
 
 /* ─── View Demo ghost button ─────────────────────────────────────────────────── */
 
-function ViewDemoBtn() {
+function ViewDemoBtn({ href }: { href: string }) {
   return (
-    <a href="#demo" className="btn-ghost inline-flex mt-2">
+    <a href={href} className="btn-ghost inline-flex mt-2">
       View Demo
     </a>
   )
@@ -240,38 +241,162 @@ function LaptopMockup() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(135deg, #4A9FFF 0%, #1A3A6B 55%, #070B14 100%)',
+            background: '#fff',
+            display: 'flex',
+            flexDirection: 'column',
+            fontFamily: 'var(--font-dm-sans), system-ui, sans-serif',
           }}
         >
-          {/* macOS-style title bar */}
-          <div style={{ height: 22, background: 'rgba(0,0,0,0.28)', display: 'flex', alignItems: 'center', gap: 5, padding: '0 10px' }}>
+          {/* ── Browser chrome ── */}
+          <div style={{ height: 20, background: '#e8ecf2', display: 'flex', alignItems: 'center', gap: 5, padding: '0 10px', flexShrink: 0 }}>
             {['#ff5f57', '#febc2e', '#28c840'].map((c) => (
               <div key={c} style={{ width: 7, height: 7, borderRadius: '50%', background: c }} />
             ))}
+            {/* Address bar */}
+            <div style={{ flex: 1, marginLeft: 6, height: 11, background: '#fff', borderRadius: 3, border: '1px solid #d1d9e6', display: 'flex', alignItems: 'center', paddingLeft: 5 }}>
+              <span style={{ fontSize: 5, color: '#94a3b8', letterSpacing: 0 }}>bobsplumbingdallas.com</span>
+            </div>
           </div>
 
-          {/* Fake website content */}
-          <div style={{ padding: '12px 14px 0' }}>
-            {/* Hero card */}
-            <div style={{ background: 'rgba(255,255,255,0.12)', borderRadius: 8, padding: '12px 14px', marginBottom: 10 }}>
-              <div style={{ width: '55%', height: 8, background: 'rgba(255,255,255,0.65)', borderRadius: 4, marginBottom: 7 }} />
-              <div style={{ width: '80%', height: 5, background: 'rgba(255,255,255,0.3)', borderRadius: 3, marginBottom: 4 }} />
-              <div style={{ width: '65%', height: 5, background: 'rgba(255,255,255,0.3)', borderRadius: 3, marginBottom: 10 }} />
-              <div style={{ width: 82, height: 22, background: '#4A9FFF', borderRadius: 20, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{ width: 46, height: 4, background: 'rgba(255,255,255,0.85)', borderRadius: 3 }} />
+          {/* ── Site ── */}
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0, overflow: 'hidden' }}>
+
+            {/* Navbar */}
+            <nav style={{
+              background: '#fff',
+              padding: '0 12px',
+              height: 24,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              borderBottom: '1px solid #eef1f7',
+              flexShrink: 0,
+            }}>
+              {/* Logo */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: 3 }}>
+                <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
+                  <circle cx="4.5" cy="4.5" r="4.5" fill="#4A9FFF" />
+                  <path d="M3 4.5l1.2 1.3L6.2 3" stroke="#fff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <span style={{ fontSize: 7.5, fontWeight: 800, color: '#0f1b2e', letterSpacing: '-0.025em' }}>Bob&apos;s Plumbing</span>
+              </div>
+              {/* Nav links */}
+              <div style={{ display: 'flex', gap: 8 }}>
+                {['Services', 'About', 'Reviews', 'Contact'].map((l) => (
+                  <span key={l} style={{ fontSize: 5.5, color: '#4b5563', fontWeight: 500 }}>{l}</span>
+                ))}
+              </div>
+              {/* CTA */}
+              <span style={{
+                background: '#2563eb',
+                color: '#fff',
+                fontSize: 5.5,
+                fontWeight: 700,
+                padding: '2.5px 7px',
+                borderRadius: 3,
+                letterSpacing: '0.01em',
+                whiteSpace: 'nowrap',
+              }}>Book Now</span>
+            </nav>
+
+            {/* Hero */}
+            <div style={{ flex: 1, display: 'flex', minHeight: 0, overflow: 'hidden', background: '#f8faff' }}>
+
+              {/* Left: copy */}
+              <div style={{
+                flex: 1,
+                padding: '14px 14px 12px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                background: '#f8faff',
+              }}>
+                <div style={{ fontSize: 5.5, fontWeight: 700, color: '#2563eb', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 5 }}>
+                  Dallas–Fort Worth
+                </div>
+                <h2 style={{
+                  margin: 0,
+                  fontSize: 11,
+                  fontWeight: 800,
+                  color: '#0f172a',
+                  lineHeight: 1.18,
+                  letterSpacing: '-0.03em',
+                  fontFamily: 'var(--font-syne), system-ui, sans-serif',
+                }}>
+                  Expert Plumbing<br />You Can Count On
+                </h2>
+                <p style={{ margin: '6px 0 0', fontSize: 5.5, color: '#64748b', lineHeight: 1.55, maxWidth: 135 }}>
+                  Licensed &amp; insured. Serving Dallas–Fort Worth.<br />Same-day service available.
+                </p>
+                <div style={{ marginTop: 10, display: 'flex', gap: 5, alignItems: 'center' }}>
+                  <span style={{
+                    background: '#2563eb',
+                    color: '#fff',
+                    fontSize: 6,
+                    fontWeight: 700,
+                    padding: '4px 10px',
+                    borderRadius: 3,
+                  }}>Book Now</span>
+                  <span style={{
+                    background: 'transparent',
+                    color: '#2563eb',
+                    fontSize: 6,
+                    fontWeight: 600,
+                    padding: '3.5px 9px',
+                    borderRadius: 3,
+                    border: '1px solid #2563eb',
+                  }}>Our Services</span>
+                </div>
+                {/* Trust badges */}
+                <div style={{ marginTop: 10, display: 'flex', gap: 6, alignItems: 'center' }}>
+                  {['⭐ 4.9 Rating', '✓ Licensed', '✓ Insured'].map((t) => (
+                    <span key={t} style={{ fontSize: 5, color: '#64748b', fontWeight: 500 }}>{t}</span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right: photo */}
+              <div style={{ width: '45%', position: 'relative', overflow: 'hidden', flexShrink: 0 }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop&q=75"
+                  alt=""
+                  aria-hidden
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+                />
               </div>
             </div>
 
-            {/* 3-column cards */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8 }}>
-              {[1, 2, 3].map((i) => (
-                <div key={i} style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 6, padding: '9px 8px' }}>
-                  <div style={{ width: '65%', height: 4, background: 'rgba(255,255,255,0.35)', borderRadius: 3, marginBottom: 6 }} />
-                  <div style={{ width: '88%', height: 3, background: 'rgba(255,255,255,0.2)', borderRadius: 3, marginBottom: 3 }} />
-                  <div style={{ width: '70%', height: 3, background: 'rgba(255,255,255,0.2)', borderRadius: 3 }} />
-                </div>
-              ))}
+            {/* Why Choose Us */}
+            <div style={{ padding: '8px 12px 9px', background: '#fff', borderTop: '1px solid #eef1f7', flexShrink: 0 }}>
+              <div style={{ fontSize: 7, fontWeight: 800, color: '#0f172a', textAlign: 'center', marginBottom: 6, letterSpacing: '-0.02em' }}>
+                Why Choose Us
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 5 }}>
+                {([
+                  { Icon: Wrench,       title: 'Our Services',      blurb: 'Repairs, installs & drain work' },
+                  { Icon: ShieldCheck,  title: '20 Years Experience', blurb: 'Licensed & 5-star rated' },
+                  { Icon: Star,         title: 'Customer Reviews',   blurb: '"Fixed our leak in an hour!"' },
+                ] as const).map(({ Icon, title, blurb }) => (
+                  <div key={title} style={{
+                    padding: '7px 6px',
+                    borderRadius: 5,
+                    background: '#f8fafc',
+                    border: '1px solid #eef1f7',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: 3,
+                    textAlign: 'center',
+                  }}>
+                    <Icon size={11} color="#2563eb" strokeWidth={2} />
+                    <div style={{ fontSize: 6, fontWeight: 700, color: '#0f172a', lineHeight: 1.2 }}>{title}</div>
+                    <div style={{ fontSize: 5.5, color: '#64748b', lineHeight: 1.35 }}>{blurb}</div>
+                  </div>
+                ))}
+              </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -319,7 +444,7 @@ function ReviewScreen() {
 
             {/* Business name */}
             <div style={{ fontSize: 10, fontWeight: 700, color: '#0A0F1E', marginBottom: 6 }}>
-              The Glassperts Window Repair
+              Dallas Pro Windows
             </div>
 
             {/* 5 stars */}
@@ -347,7 +472,7 @@ function ReviewScreen() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 14 }}>
             <div style={{ width: 28, height: 28, borderRadius: '50%', background: '#4A9FFF', flexShrink: 0 }} />
             <div>
-              <div style={{ fontSize: 9.5, fontWeight: 600, color: '#0A0F1E', marginBottom: 3 }}>Muhammad Shaild Jamil</div>
+              <div style={{ fontSize: 9.5, fontWeight: 600, color: '#0A0F1E', marginBottom: 3 }}>James R.</div>
               <div style={{ display: 'flex', gap: 2 }}>
                 {[1, 2, 3, 4, 5].map((i) => (
                   <span key={i} style={{ color: '#F5A623', fontSize: 9 }}>★</span>
@@ -460,7 +585,7 @@ export default function FeatureDetailSections() {
           className="text-base sm:text-lg italic mb-8"
           style={{ color: '#6B7280', fontFamily: 'var(--font-dm-sans)', fontWeight: 300 }}
         >
-          Get a website that turns visitors into real conversations — sent directly to your phone.
+          A website built for your trade that turns visitors into booked jobs.
         </p>
         <ul className="flex flex-col gap-6 mb-8">
           <BulletItem
@@ -480,7 +605,7 @@ export default function FeatureDetailSections() {
             desc="We set up your site so Google knows exactly who you are, where you are, and what you do."
           />
         </ul>
-        <ViewDemoBtn />
+        <ViewDemoBtn href="/products/website" />
       </FeatureSection>
 
       {/* ── Section 2: AI Missed Call Text-Back — Phone RIGHT ── */}
@@ -532,7 +657,7 @@ export default function FeatureDetailSections() {
             desc="Missed a call after hours? The system still responds. Your business never goes dark."
           />
         </ul>
-        <ViewDemoBtn />
+        <ViewDemoBtn href="/products/missed-call" />
       </FeatureSection>
 
       {/* ── Section 3: 5-Star Review Funnel — Phone LEFT ── */}
@@ -564,11 +689,11 @@ export default function FeatureDetailSections() {
             desc="Send a review request to any customer in one tap. We keep it simple so you actually use it."
           />
           <BulletItem
-            title="Protect Your Reputation"
-            desc="Bad reviews happen. We help make sure they don't define you online."
+            title="Filter Out the Bad Ones"
+            desc="Unhappy customers get redirected to a private feedback form instead of Google. You fix the problem before it goes public."
           />
         </ul>
-        <ViewDemoBtn />
+        <ViewDemoBtn href="/products/reviews" />
       </FeatureSection>
 
       {/* ── Section 4: Local SEO — Phone RIGHT ── */}
@@ -592,11 +717,11 @@ export default function FeatureDetailSections() {
             desc="People who find you through Google are already looking for exactly what you offer. No chasing, no cold calls."
           />
           <BulletItem
-            title="Stop Paying for Unqualified Leads"
+            title="Get Customers Who Are Ready to Book"
             desc="Organic search brings in customers who are ready to book — not just browsing."
           />
           <BulletItem
-            title="Google Profile Optimization"
+            title="Show Up on Google Maps"
             desc="We fully set up and optimize your Google Business profile so you show up in maps and local searches."
           />
           <BulletItem
@@ -604,7 +729,7 @@ export default function FeatureDetailSections() {
             desc="Unlike paid ads, SEO keeps working for you month after month without increasing costs."
           />
         </ul>
-        <ViewDemoBtn />
+        <ViewDemoBtn href="/products/local-seo" />
       </FeatureSection>
 
       {/* ── Section 5: One-Click Marketing Campaigns — Phone LEFT ── */}
@@ -654,7 +779,7 @@ export default function FeatureDetailSections() {
             desc="Everything is set up, designed, and ready. You just press a button."
           />
         </ul>
-        <ViewDemoBtn />
+        <ViewDemoBtn href="/products/campaigns" />
       </FeatureSection>
     </>
   )

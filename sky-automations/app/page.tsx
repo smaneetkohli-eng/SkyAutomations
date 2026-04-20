@@ -90,7 +90,7 @@ export default function HomePage() {
       {/* ── HERO — title + two frosted cards (mascot | copy + CTAs) ───────── */}
       <section
         id="hero"
-        className="relative z-10 flex min-h-0 flex-col overflow-x-clip overflow-y-visible bg-white pt-16 pb-6 sm:pb-8 md:pb-9"
+        className="relative z-10 flex min-h-0 flex-col overflow-x-hidden overflow-y-visible bg-white pt-16 pb-6 sm:pb-8 md:pb-9"
       >
         <div className="absolute inset-0 z-0">
           <Image
@@ -128,14 +128,13 @@ export default function HomePage() {
 
         <div className="relative z-10 flex flex-col px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4 md:pt-5">
           {/* Title + subtitle */}
-          <div className="mx-auto w-full max-w-[min(100%,92rem)] shrink-0 px-1 text-center sm:px-2">
+          <div className="mx-auto w-full min-w-0 max-w-[min(100%,92rem)] shrink-0 px-3 text-center sm:px-4 md:px-5">
             <motion.h1
               initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, ease: customEase }}
-              className="font-syne font-extrabold text-[#0A0F1E]"
+              className="font-syne font-extrabold text-[#0A0F1E] w-full min-w-0 max-w-full break-words [font-size:clamp(1.875rem,1rem+8vw,10.5rem)]"
               style={{
-                fontSize: 'clamp(4.25rem, 11vw + 2.25rem, 10.5rem)',
                 letterSpacing: '-0.042em',
                 lineHeight: 0.94,
                 fontWeight: 800,
@@ -150,7 +149,7 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.08, ease: customEase }}
               className="mt-3 font-dmSans text-xs font-medium uppercase tracking-[0.18em] text-[#5c6578] sm:mt-4 sm:text-sm md:text-base"
             >
-              AI-powered digital infrastructure for home service businesses
+              More calls. More jobs. Less chaos.
             </motion.p>
           </div>
 
@@ -726,20 +725,11 @@ export default function HomePage() {
                 boxShadow: '0 8px 48px rgba(74,159,255,0.12)',
               }}
             >
-              {/* Most Popular badge */}
-              <div className="mb-6">
-                <span
-                  className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold"
-                  style={{
-                    background: 'rgba(74,159,255,0.1)',
-                    color: '#4A9FFF',
-                    border: '1px solid rgba(74,159,255,0.2)',
-                    fontFamily: 'var(--font-dm-sans)',
-                  }}
-                >
-                  Most Popular
-                </span>
-              </div>
+              {/* Strikethrough retail value */}
+              <p className="mb-4 text-sm" style={{ color: '#9CA3AF', fontFamily: 'var(--font-dm-sans)' }}>
+                <span style={{ textDecoration: 'line-through' }}>$2,037/mo</span>
+                <span className="ml-1.5">if purchased separately</span>
+              </p>
 
               {/* Price */}
               <div className="flex items-end gap-1 mb-2">
@@ -845,31 +835,62 @@ export default function HomePage() {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <InViewMotion className="max-w-2xl mx-auto text-center lg:text-left lg:mx-0">
-            <h2
-              className="font-syne mb-5"
-              style={{
-                fontSize: 'clamp(30px, 4.5vw, 56px)',
-                fontWeight: 800,
-                letterSpacing: '-0.03em',
-                color: '#F0F4FF',
-                lineHeight: 1.1,
-              }}
+          <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] items-center">
+            <InViewMotion className="mx-auto text-center md:mx-0 md:text-left">
+              <h2
+                className="font-syne mb-5"
+                style={{
+                  fontSize: 'clamp(30px, 4.5vw, 56px)',
+                  fontWeight: 800,
+                  letterSpacing: '-0.03em',
+                  color: '#F0F4FF',
+                  lineHeight: 1.1,
+                }}
+              >
+                Ready to stop missing calls<br />
+                and start winning jobs?
+              </h2>
+              <p
+                className="text-lg mb-8"
+                style={{ color: '#6B7280', fontFamily: 'var(--font-dm-sans)', fontWeight: 300 }}
+              >
+                Book a free 20-minute call. We&apos;ll answer your questions honestly and
+                show you exactly what you&apos;d be getting.
+              </p>
+              <div className="flex justify-center md:justify-start">
+                <Link href="#book-call" className="btn-primary text-base inline-flex">
+                  Book Your Free Call
+                </Link>
+              </div>
+            </InViewMotion>
+
+            {/* Footer mascot — md+ only; centered in its 1/3 column */}
+            <div
+              className="hidden md:flex items-center justify-center self-center pointer-events-none select-none"
+              aria-hidden
             >
-              Ready to stop missing calls<br />
-              and start winning jobs?
-            </h2>
-            <p
-              className="text-lg mb-8"
-              style={{ color: '#6B7280', fontFamily: 'var(--font-dm-sans)', fontWeight: 300 }}
-            >
-              Book a free 20-minute call. We&apos;ll answer your questions honestly and
-              show you exactly what you&apos;d be getting.
-            </p>
-            <Link href="#book-call" className="btn-primary text-base inline-flex">
-              Book Your Free Call
-            </Link>
-          </InViewMotion>
+              <motion.div
+                className="inline-flex"
+                initial={{ y: 0 }}
+                animate={{ y: [0, -14, 0] }}
+                transition={{
+                  duration: 3.5,
+                  ease: 'easeInOut',
+                  repeat: Infinity,
+                  repeatType: 'loop',
+                }}
+              >
+                <Image
+                  src="/Mascots/footer-mascot.png"
+                  alt=""
+                  width={350}
+                  height={350}
+                  className="w-auto object-contain object-bottom mix-blend-screen h-[clamp(300px,22vw,350px)] max-h-[350px]"
+                  sizes="(max-width: 768px) 0px, 350px"
+                />
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 

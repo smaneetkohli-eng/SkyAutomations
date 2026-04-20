@@ -1,28 +1,21 @@
 import Link from 'next/link'
-
-function CloudIcon() {
-  return (
-    <svg width="24" height="18" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M22.4 8.4C22.792 7.376 23.04 6.616 23.04 5.8C23.04 3.48 21.12 1.6 18.76 1.6C18.144 1.6 17.56 1.736 17.04 1.976C16.12 0.76 14.664 0 13.04 0C10.264 0 8.04 2.152 8.04 4.8C6.044 5.44 4.5 7.16 4.5 9.2C4.5 11.52 6.42 13.4 8.78 13.4H22.4C24.383 13.4 26 11.816 26 9.9"
-        stroke="#4A9FFF"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-      />
-    </svg>
-  )
-}
+import Image from 'next/image'
 
 const productLinks = [
   { label: "What's Included", href: '/#features' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'Functional Website', href: '/products/website' },
+  { label: 'Missed Call Text-Back', href: '/products/missed-call' },
+  { label: 'Local SEO', href: '/products/local-seo' },
+  { label: '5-Star Review Funnel', href: '/products/reviews' },
+  { label: 'One-Click Marketing Campaigns', href: '/products/campaigns' },
 ]
 
 const companyLinks = [
-  { label: 'Our Work', href: '/our-work' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'The Process', href: '/process' },
+]
+
+const ourWorkLinks = [
   { label: 'About', href: '/about' },
 ]
 
@@ -64,11 +57,17 @@ export default function Footer() {
 
       {/* Footer content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="pt-16 pb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+        <div className="pt-16 pb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Col 1: Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <CloudIcon />
+              <Image
+                src="/Mascots/mascot-home.png"
+                alt="Sky Automations mascot"
+                width={32}
+                height={32}
+                className="object-contain"
+              />
               <span
                 style={{
                   fontFamily: 'var(--font-syne)',
@@ -138,7 +137,32 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Legal */}
+          {/* Col 4: Our Work */}
+          <div>
+            <h4
+              className="text-xs font-semibold tracking-[1.5px] uppercase mb-4"
+              style={{ color: 'rgba(240,244,255,0.4)', fontFamily: 'var(--font-dm-sans)' }}
+            >
+              Our Work
+            </h4>
+            <ul className="flex flex-col gap-3">
+              {ourWorkLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm transition-colors duration-150"
+                    style={{ color: '#6B7280', fontFamily: 'var(--font-dm-sans)' }}
+                    onMouseEnter={e => (e.currentTarget.style.color = '#4A9FFF')}
+                    onMouseLeave={e => (e.currentTarget.style.color = '#6B7280')}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 5: Legal */}
           <div>
             <h4
               className="text-xs font-semibold tracking-[1.5px] uppercase mb-4"

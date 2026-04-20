@@ -11,8 +11,10 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
   }
   body {
+    overflow-x: clip;
     font-family: var(--font-dm-sans), sans-serif;
     color: #0A0F1E;
     background: #ffffff;

@@ -11,54 +11,41 @@ import { InViewMotion } from '@/components/InViewMotion'
 const expandedFeatures = [
   {
     title: 'Professional Website (10–20 pages)',
+    value: '$500/mo value',
     desc: 'A clean, fast, mobile-first website built specifically for your trade. Every button is set up to send text messages directly to your phone — no email delays, no missed opportunities.',
   },
   {
     title: 'AI Missed Call Text-Back',
+    value: '$297/mo value',
     desc: 'When you miss a call, our AI automatically sends a text to that number within seconds. It keeps the conversation alive so you can respond when you get off the job.',
   },
   {
     title: 'Automated Lead Follow-Up',
+    value: '$197/mo value',
     desc: 'Every form fill on your website triggers an instant, personalized text reply in your name. You look responsive and professional without lifting a finger.',
   },
   {
     title: '5-Star Review Funnel',
+    value: '$199/mo value',
     desc: 'After a job, customers automatically get a follow-up asking for a review. Happy customers are guided to Google. Unhappy ones are handled privately — protecting your reputation.',
   },
   {
     title: 'Local SEO + Google Profile Optimization',
+    value: '$500/mo value',
     desc: 'We optimize your website and Google Business Profile so your business ranks when people in your area search for your service. Real organic traffic, no ad spend.',
   },
   {
     title: 'Website Chat to Text Setup',
+    value: '$97/mo value',
     desc: 'A chat widget on your website that converts conversations to text messages on your phone. Customers feel heard. You respond at your own pace.',
   },
   {
     title: 'One-Click Marketing Campaigns',
+    value: '$247/mo value',
     desc: 'Pre-built referral and repeat customer campaigns you can activate with a single click. Built to generate more work from your existing happy customers.',
   },
 ]
 
-const steps = [
-  {
-    number: '1',
-    title: 'Book A Free Call',
-    time: '~20 min',
-    desc: "20 minutes. We answer every question, walk through what's included, and make sure it's a good fit. No pressure.",
-  },
-  {
-    number: '2',
-    title: 'We Build Everything',
-    time: '7–10 days',
-    desc: 'Fill out a short form with your business details. We handle the website, automations, SEO — all of it.',
-  },
-  {
-    number: '3',
-    title: 'Launch and Start Getting Calls',
-    time: '~25 min',
-    desc: 'We walk you through your new system in 25 minutes. Then it runs on autopilot. Your only job is answering the phone.',
-  },
-]
 
 export default function PricingPage() {
   const [isAnnual, setIsAnnual] = useState(false)
@@ -84,16 +71,7 @@ export default function PricingPage() {
             className="absolute inset-0"
             style={{
               background:
-                'linear-gradient(to bottom, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.8) 60%, rgba(255,255,255,1) 100%)',
-            }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                'radial-gradient(circle, rgba(74,159,255,0.18) 1px, transparent 1px)',
-              backgroundSize: '28px 28px',
-              opacity: 0.6,
+                'linear-gradient(to bottom, rgba(255,255,255,0.45) 0%, rgba(240,244,255,0.75) 60%, #F0F4FF 100%)',
             }}
           />
         </div>
@@ -105,11 +83,11 @@ export default function PricingPage() {
             transition={{ duration: 0.55, delay: 0.1 }}
             className="font-syne mb-5"
             style={{
-              fontSize: 'clamp(36px, 5.5vw, 68px)',
+              fontSize: 'clamp(52px, 8vw, 108px)',
               fontWeight: 800,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.035em',
               color: '#0A0F1E',
-              lineHeight: 1.08,
+              lineHeight: 1.04,
             }}
           >
             Simple Pricing.<br />
@@ -213,6 +191,15 @@ export default function PricingPage() {
               </span>
             </div>
 
+            {/* Strikethrough retail value */}
+            <p
+              className="text-sm mb-1"
+              style={{ color: '#9CA3AF', fontFamily: 'var(--font-dm-sans)' }}
+            >
+              <span style={{ textDecoration: 'line-through' }}>$2,037/mo</span>
+              <span className="ml-1.5">if purchased separately</span>
+            </p>
+
             {/* Price with AnimatePresence */}
             <div className="flex items-end gap-1 mb-2 overflow-hidden">
               <AnimatePresence mode="wait">
@@ -270,13 +257,21 @@ export default function PricingPage() {
                   >
                     <span className="h-2 w-2 rounded-full bg-[#4A9FFF]" />
                   </span>
-                  <div>
-                    <p
-                      className="text-sm font-semibold mb-1"
-                      style={{ color: '#0A0F1E', fontFamily: 'var(--font-dm-sans)' }}
-                    >
-                      {feature.title}
-                    </p>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-baseline justify-between gap-3 mb-1">
+                      <p
+                        className="text-sm font-semibold"
+                        style={{ color: '#0A0F1E', fontFamily: 'var(--font-dm-sans)' }}
+                      >
+                        {feature.title}
+                      </p>
+                      <span
+                        className="shrink-0 text-xs font-medium whitespace-nowrap"
+                        style={{ color: '#9CA3AF', fontFamily: 'var(--font-dm-sans)' }}
+                      >
+                        {feature.value}
+                      </span>
+                    </div>
                     <p
                       className="text-sm leading-relaxed"
                       style={{
@@ -305,131 +300,6 @@ export default function PricingPage() {
             >
               No credit card needed to get started
             </p>
-          </InViewMotion>
-        </div>
-      </section>
-
-      {/* PROCESS */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
-            <InViewMotion>
-              <span className="section-label mb-4 inline-block">What Working With Us Looks Like</span>
-              <h2
-                className="font-syne mt-4"
-                style={{
-                  fontSize: 'clamp(26px, 3.5vw, 44px)',
-                  fontWeight: 800,
-                  letterSpacing: '-0.025em',
-                  color: '#0A0F1E',
-                }}
-              >
-                You'll be live and getting calls<br className="hidden sm:block" /> in 7 to 10 days.
-              </h2>
-            </InViewMotion>
-          </div>
-
-          <div className="flex flex-col lg:flex-row gap-0 relative max-w-3xl">
-            {steps.map((step, i) => (
-              <InViewMotion
-                key={i}
-                from={{ opacity: 0, y: 36 }}
-                to={{ opacity: 1, y: 0 }}
-                delay={i * 0.12}
-                duration={0.5}
-                className="flex-1 relative"
-              >
-                {i < steps.length - 1 && (
-                  <div
-                    className="hidden lg:block absolute top-6 left-[calc(50%+28px)] right-0 h-px"
-                    style={{ borderTop: '2px dashed rgba(74,159,255,0.25)' }}
-                  />
-                )}
-                <div className="flex lg:flex-col items-start lg:items-center gap-4 lg:gap-3 lg:text-center px-0 lg:px-4">
-                  <div
-                    className="shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-syne font-bold text-lg"
-                    style={{
-                      background: 'rgba(74,159,255,0.1)',
-                      border: '2px solid rgba(74,159,255,0.3)',
-                      color: '#4A9FFF',
-                      position: 'relative',
-                      zIndex: 1,
-                    }}
-                  >
-                    {step.number}
-                  </div>
-                  <div className="flex-1 lg:flex-none">
-                    <h3
-                      className="font-syne font-bold text-lg mb-1"
-                      style={{ color: '#0A0F1E', letterSpacing: '-0.01em' }}
-                    >
-                      {step.title}
-                    </h3>
-                    <p
-                      className="text-xs font-semibold mb-2"
-                      style={{ color: '#4A9FFF', fontFamily: 'var(--font-dm-sans)' }}
-                    >
-                      {step.time}
-                    </p>
-                    <p
-                      className="text-sm leading-relaxed"
-                      style={{
-                        color: '#6B7280',
-                        fontFamily: 'var(--font-dm-sans)',
-                        fontWeight: 300,
-                        maxWidth: 220,
-                      }}
-                    >
-                      {step.desc}
-                    </p>
-                  </div>
-                </div>
-                {i < steps.length - 1 && (
-                  <div
-                    className="lg:hidden ml-6 my-2 w-px h-8"
-                    style={{ borderLeft: '2px dashed rgba(74,159,255,0.25)' }}
-                  />
-                )}
-              </InViewMotion>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA BANNER */}
-      <section className="py-24 relative overflow-hidden" style={{ background: '#070B14' }}>
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'radial-gradient(ellipse 70% 50% at 50% 100%, rgba(74,159,255,0.18) 0%, transparent 60%)',
-          }}
-        />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <InViewMotion className="max-w-2xl mx-auto text-center lg:text-left lg:mx-0">
-            <h2
-              className="font-syne mb-5"
-              style={{
-                fontSize: 'clamp(28px, 4vw, 52px)',
-                fontWeight: 800,
-                letterSpacing: '-0.03em',
-                color: '#F0F4FF',
-                lineHeight: 1.1,
-              }}
-            >
-              Ready to stop missing calls<br />
-              and start winning jobs?
-            </h2>
-            <p
-              className="text-lg mb-8"
-              style={{ color: '#6B7280', fontFamily: 'var(--font-dm-sans)', fontWeight: 300 }}
-            >
-              Book a free 20-minute call. We&apos;ll answer your questions honestly and
-              show you exactly what you&apos;d be getting.
-            </p>
-            <Link href="#book-call" className="btn-primary text-base inline-flex">
-              Book Your Free Call
-            </Link>
           </InViewMotion>
         </div>
       </section>
