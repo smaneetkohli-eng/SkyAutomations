@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const productLinks = [
-  { label: "What's Included", href: '/#features' },
+  { label: "What's Included", href: '/pricing' },
   { label: 'Functional Website', href: '/products/website' },
   { label: 'Missed Call Text-Back', href: '/products/missed-call' },
   { label: 'Local SEO', href: '/products/local-seo' },
@@ -12,7 +12,7 @@ const productLinks = [
 
 const companyLinks = [
   { label: 'Pricing', href: '/pricing' },
-  { label: 'The Process', href: '/process' },
+  { label: 'The Process', href: '/our-work' },
 ]
 
 const ourWorkLinks = [
@@ -20,8 +20,8 @@ const ourWorkLinks = [
 ]
 
 const legalLinks = [
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'Terms of Service', href: '#' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms of Service', href: '/terms-of-service' },
 ]
 
 export default function Footer() {
