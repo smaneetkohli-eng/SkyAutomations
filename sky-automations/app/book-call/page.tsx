@@ -48,7 +48,7 @@ export default function BookCallPage() {
             </div>
 
             <form
-              action="https://formsubmit.co/skyautomationagency@gmail.com"
+              action="https://formsubmit.co/skyautomationsagency@gmail.com"
               method="POST"
               className="rounded-[2rem] border border-white/80 bg-white p-6 shadow-[0_18px_70px_rgba(74,159,255,0.14)] sm:p-8"
             >
@@ -145,7 +145,7 @@ export default function BookCallPage() {
               </button>
 
               <p className="mt-4 text-center text-xs leading-relaxed text-[#6B7280]">
-                This sends your request to skyautomationagency@gmail.com.
+                This sends your request to skyautomationsagency@gmail.com.
               </p>
             </form>
           </div>
