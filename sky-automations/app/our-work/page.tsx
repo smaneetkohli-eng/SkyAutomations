@@ -26,7 +26,7 @@ const stepData = [
     title: 'Book A Free Call',
     time: '~20 min',
     desc: "20 minutes. We answer every question, walk through what's included, and make sure it's a good fit. No pressure.",
-    href: '/#book-call',
+    href: '/book-call',
     btnLabel: 'Book A Free Call',
     btnPrimary: true,
   },

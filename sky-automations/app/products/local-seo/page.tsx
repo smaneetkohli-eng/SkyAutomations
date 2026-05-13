@@ -180,7 +180,7 @@ export default function LocalSeoPage() {
             >
               Book a free 20-minute call and we&apos;ll show you exactly where you stand and how to climb.
             </p>
-            <Link href="/#book-call" className="btn-primary text-base">
+            <Link href="/book-call" className="btn-primary text-base">
               Book A Free Call
             </Link>
           </div>

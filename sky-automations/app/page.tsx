@@ -199,7 +199,7 @@ export default function HomePage() {
                   needed.
                 </p>
                 <div className="flex flex-wrap justify-center gap-3 sm:gap-3.5 pt-0.5">
-                  <Link href="#book-call" className="btn-primary text-base sm:text-lg px-9 py-4 sm:px-10 sm:py-4">
+                  <Link href="/book-call" className="btn-primary text-base sm:text-lg px-9 py-4 sm:px-10 sm:py-4">
                     Book A Free Call
                   </Link>
                   <a
@@ -715,11 +715,11 @@ export default function HomePage() {
               One price. Everything included.
             </h2>
             <p
-              className="text-lg max-w-md mx-auto"
+              className="text-lg max-w-2xl mx-auto"
               style={{ color: '#6B7280', fontFamily: 'var(--font-dm-sans)', fontWeight: 300 }}
             >
-              No setup fees. No hidden costs. Cancel any time — though most businesses
-              stay for years.
+              No setup fees. No hidden costs. Pricing is flexible because we want to
+              actually help your business, not become another expense.
             </p>
           </InViewMotion>
 
@@ -804,7 +804,7 @@ export default function HomePage() {
               </ul>
 
               <Link
-                href="#book-call"
+                href="/book-call"
                 className="w-full btn-primary justify-center"
                 style={{ display: 'flex' }}
               >
@@ -869,7 +869,7 @@ export default function HomePage() {
                 show you exactly what you&apos;d be getting.
               </p>
               <div className="flex justify-center md:justify-start">
-                <Link href="#book-call" className="btn-primary text-base inline-flex">
+                <Link href="/book-call" className="btn-primary text-base inline-flex">
                   Book Your Free Call
                 </Link>
               </div>

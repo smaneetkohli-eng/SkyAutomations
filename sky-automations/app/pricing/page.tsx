@@ -110,6 +110,16 @@ export default function PricingPage() {
       {/* PRICING CARD */}
       <section className="py-20" style={{ background: '#F0F4FF' }}>
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
+          <InViewMotion className="mb-10 text-center">
+            <p
+              className="mx-auto max-w-xl text-lg leading-relaxed"
+              style={{ color: '#6B7280', fontFamily: 'var(--font-dm-sans)', fontWeight: 300 }}
+            >
+              We&apos;re flexible with pricing because we want to actually help your
+              business grow, not just become another monthly expense.
+            </p>
+          </InViewMotion>
+
           {/* Toggle */}
           <InViewMotion className="flex items-center justify-center gap-4 mb-12">
             <span
@@ -288,7 +298,7 @@ export default function PricingPage() {
             </ul>
 
             <Link
-              href="#book-call"
+              href="/book-call"
               className="w-full btn-primary justify-center text-base"
               style={{ display: 'flex' }}
             >

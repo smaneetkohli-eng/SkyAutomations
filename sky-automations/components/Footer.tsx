@@ -100,10 +100,8 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm transition-colors duration-150"
-                    style={{ color: '#6B7280', fontFamily: 'var(--font-dm-sans)' }}
-                    onMouseEnter={e => (e.currentTarget.style.color = '#4A9FFF')}
-                    onMouseLeave={e => (e.currentTarget.style.color = '#6B7280')}
+                    className="text-sm text-[#6B7280] transition-colors duration-150 hover:text-[#4A9FFF]"
+                    style={{ fontFamily: 'var(--font-dm-sans)' }}
                   >
                     {link.label}
                   </Link>
@@ -125,10 +123,8 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm transition-colors duration-150"
-                    style={{ color: '#6B7280', fontFamily: 'var(--font-dm-sans)' }}
-                    onMouseEnter={e => (e.currentTarget.style.color = '#4A9FFF')}
-                    onMouseLeave={e => (e.currentTarget.style.color = '#6B7280')}
+                    className="text-sm text-[#6B7280] transition-colors duration-150 hover:text-[#4A9FFF]"
+                    style={{ fontFamily: 'var(--font-dm-sans)' }}
                   >
                     {link.label}
                   </Link>
@@ -150,10 +146,8 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm transition-colors duration-150"
-                    style={{ color: '#6B7280', fontFamily: 'var(--font-dm-sans)' }}
-                    onMouseEnter={e => (e.currentTarget.style.color = '#4A9FFF')}
-                    onMouseLeave={e => (e.currentTarget.style.color = '#6B7280')}
+                    className="text-sm text-[#6B7280] transition-colors duration-150 hover:text-[#4A9FFF]"
+                    style={{ fontFamily: 'var(--font-dm-sans)' }}
                   >
                     {link.label}
                   </Link>
@@ -175,10 +169,8 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm transition-colors duration-150"
-                    style={{ color: '#6B7280', fontFamily: 'var(--font-dm-sans)' }}
-                    onMouseEnter={e => (e.currentTarget.style.color = '#4A9FFF')}
-                    onMouseLeave={e => (e.currentTarget.style.color = '#6B7280')}
+                    className="text-sm text-[#6B7280] transition-colors duration-150 hover:text-[#4A9FFF]"
+                    style={{ fontFamily: 'var(--font-dm-sans)' }}
                   >
                     {link.label}
                   </Link>

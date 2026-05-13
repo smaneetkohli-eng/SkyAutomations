@@ -63,7 +63,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.28 }}
           >
-            <Link href="#book-call" className="btn-primary text-base mt-2">
+            <Link href="/book-call" className="btn-primary text-base mt-2">
               Book A Free Call In The Meantime
             </Link>
           </motion.div>

@@ -170,7 +170,7 @@ export default function MissedCallPage() {
             >
               Book a free 20-minute call and we&apos;ll show you how the system works.
             </p>
-            <Link href="/#book-call" className="btn-primary text-base">
+            <Link href="/book-call" className="btn-primary text-base">
               Book A Free Call
             </Link>
           </div>

@@ -177,7 +177,7 @@ export default function WebsitePage() {
             >
               Book a free 20-minute call and we&apos;ll show you exactly what your site will look like.
             </p>
-            <Link href="/#book-call" className="btn-primary text-base">
+            <Link href="/book-call" className="btn-primary text-base">
               Book A Free Call
             </Link>
           </div>

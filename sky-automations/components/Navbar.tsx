@@ -231,17 +231,8 @@ export default function Navbar() {
                 Log In
               </button>
               <Link
-                href="#book-call"
-                className="text-sm font-medium px-5 py-2.5 rounded-full text-white transition-all duration-200"
-                style={{ background: '#4A9FFF' }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.background = '#1A6BFF'
-                  ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)'
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.background = '#4A9FFF'
-                  ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
-                }}
+                href="/book-call"
+                className="text-sm font-medium px-5 py-2.5 rounded-full bg-[#4A9FFF] text-white transition-all duration-200 hover:-translate-y-px hover:bg-[#1A6BFF] hover:shadow-[0_8px_24px_rgba(74,159,255,0.35)]"
               >
                 Book A Call
               </Link>
@@ -389,7 +380,7 @@ export default function Navbar() {
                   Log In
                 </button>
                 <Link
-                  href="#book-call"
+                  href="/book-call"
                   className="w-full text-center py-4 rounded-full font-medium text-white transition-all"
                   style={{ background: '#4A9FFF', fontFamily: 'var(--font-dm-sans)' }}
                   onClick={() => setMobileOpen(false)}

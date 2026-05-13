@@ -175,7 +175,7 @@ export default function CampaignsPage() {
             >
               Book a free 20-minute call and we&apos;ll walk you through exactly how a campaign gets launched.
             </p>
-            <Link href="/#book-call" className="btn-primary text-base">
+            <Link href="/book-call" className="btn-primary text-base">
               Book A Free Call
             </Link>
           </div>
