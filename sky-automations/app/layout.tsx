@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Syne, DM_Sans } from 'next/font/google'
 import './globals.css'
 
@@ -31,7 +32,13 @@ export default function RootLayout({
     <html lang="en" className={`${syne.variable} ${dmSans.variable}`}>
       <body className="font-dmSans antialiased">
         {children}
-        <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a1b5195b2d4c061bcf203ae" data-source="WEB_USER"></script>
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6a1b5195b2d4c061bcf203ae"
+          data-source="WEB_USER"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   )
