@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 
 const SCRIPT_ID = 'ghl-chat-widget-loader'
 const WIDGET_ROOT_ID = 'ghl-chat-widget-root'
-const WIDGET_ID = '6a1b5195b2d4c061bcf203ae'
+const WIDGET_ID = '6a1b5b2d96c166bea6f27b1b'
 const LOCATION_ID = 'uPklpYk6pdVYoelpM6hv'
 
 export default function GHLChatWidget() {
