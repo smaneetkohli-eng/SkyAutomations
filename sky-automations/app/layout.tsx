@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import { Syne, DM_Sans } from 'next/font/google'
+import GHLChatWidget from '@/components/GHLChatWidget'
 import './globals.css'
 
 const syne = Syne({
@@ -32,13 +32,7 @@ export default function RootLayout({
     <html lang="en" className={`${syne.variable} ${dmSans.variable}`}>
       <body className="font-dmSans antialiased">
         {children}
-        <Script
-          src="https://widgets.leadconnectorhq.com/loader.js"
-          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-          data-widget-id="6a1b5195b2d4c061bcf203ae"
-          data-source="WEB_USER"
-          strategy="lazyOnload"
-        />
+        <GHLChatWidget />
       </body>
     </html>
   )
