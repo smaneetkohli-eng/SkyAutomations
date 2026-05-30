@@ -1,9 +1,10 @@
 'use client'
 
-import { useEffect } from 'react'
+import { createElement, useEffect } from 'react'
 
 const SCRIPT_ID = 'ghl-chat-widget-loader'
 const WIDGET_ID = '6a1b5195b2d4c061bcf203ae'
+const LOCATION_ID = 'uPklpYk6pdVYoelpM6hv'
 
 export default function GHLChatWidget() {
   useEffect(() => {
@@ -12,7 +13,6 @@ export default function GHLChatWidget() {
     const script = document.createElement('script')
     script.id = SCRIPT_ID
     script.src = 'https://widgets.leadconnectorhq.com/loader.js'
-    script.async = true
     script.setAttribute(
       'data-resources-url',
       'https://widgets.leadconnectorhq.com/chat-widget/loader.js'
@@ -22,12 +22,12 @@ export default function GHLChatWidget() {
     document.body.appendChild(script)
   }, [])
 
-  return (
-    <div
-      data-chat-widget=""
-      data-widget-id={WIDGET_ID}
-      aria-hidden="true"
-      style={{ display: 'none' }}
-    />
-  )
+  return createElement('chat-widget', {
+    'location-id': LOCATION_ID,
+    'data-widget-id': WIDGET_ID,
+    style: {
+      '--chat-widget-primary-color': '#4A9FFF',
+      '--chat-widget-active-color': '#4A9FFF',
+    },
+  })
 }

@@ -11,10 +11,10 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    overflow-x: clip;
+    overflow-x: hidden;
   }
   body {
-    overflow-x: clip;
+    overflow-x: hidden;
     font-family: var(--font-dm-sans), sans-serif;
     color: #0A0F1E;
     background: #ffffff;
@@ -65,4 +65,9 @@
     border-color: rgba(74,159,255,0.4);
     box-shadow: 0 0 24px rgba(74,159,255,0.08);
   }
+}
+
+/* Keep GHL live chat bubble above site chrome */
+chat-widget {
+  z-index: 99999 !important;
 }
