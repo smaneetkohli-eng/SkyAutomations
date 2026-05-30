@@ -190,7 +190,19 @@ export default function Footer() {
           }}
         >
           <span>© 2025 Sky Automations LLC. All rights reserved.</span>
-          <span>Built for the trades. Powered by AI.</span>
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+            <Link href="/privacy-policy" className="hover:text-[#4A9FFF] transition-colors">
+              Privacy Policy
+            </Link>
+            <span aria-hidden="true">|</span>
+            <Link href="/terms-of-service" className="hover:text-[#4A9FFF] transition-colors">
+              Terms of Service
+            </Link>
+            <span className="hidden sm:inline" aria-hidden="true">
+              ·
+            </span>
+            <span className="hidden sm:inline">Built for the trades. Powered by AI.</span>
+          </div>
         </div>
       </div>
     </footer>
