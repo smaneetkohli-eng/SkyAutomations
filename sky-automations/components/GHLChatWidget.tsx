@@ -1,14 +1,23 @@
 'use client'
 
-import { createElement, useEffect } from 'react'
+import { useEffect } from 'react'
 
 const SCRIPT_ID = 'ghl-chat-widget-loader'
+const WIDGET_ROOT_ID = 'ghl-chat-widget-root'
 const WIDGET_ID = '6a1b5195b2d4c061bcf203ae'
 const LOCATION_ID = 'uPklpYk6pdVYoelpM6hv'
 
 export default function GHLChatWidget() {
   useEffect(() => {
     if (document.getElementById(SCRIPT_ID)) return
+
+    const widget = document.createElement('chat-widget')
+    widget.id = WIDGET_ROOT_ID
+    widget.setAttribute('location-id', LOCATION_ID)
+    widget.setAttribute('data-widget-id', WIDGET_ID)
+    widget.style.setProperty('--chat-widget-primary-color', '#4A9FFF')
+    widget.style.setProperty('--chat-widget-active-color', '#4A9FFF')
+    document.body.appendChild(widget)
 
     const script = document.createElement('script')
     script.id = SCRIPT_ID
@@ -22,12 +31,5 @@ export default function GHLChatWidget() {
     document.body.appendChild(script)
   }, [])
 
-  return createElement('chat-widget', {
-    'location-id': LOCATION_ID,
-    'data-widget-id': WIDGET_ID,
-    style: {
-      '--chat-widget-primary-color': '#4A9FFF',
-      '--chat-widget-active-color': '#4A9FFF',
-    },
-  })
+  return null
 }
