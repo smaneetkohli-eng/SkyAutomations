@@ -568,6 +568,89 @@ function SeoScreen() {
   )
 }
 
+/* ─── App inbox phone screen (Section 6) ────────────────────────────────────── */
+
+function AppScreen() {
+  const leads = [
+    { name: 'Mike T.', message: 'Hey, how much for a full HVAC tune-up?' },
+    { name: 'Sandra L.', message: 'Do you guys do same-day service? Need help ASAP' },
+    { name: 'Carlos M.', message: 'Following up on the estimate from yesterday' },
+  ]
+
+  return (
+    <PhoneFrame screenClass="phone-screen-app">
+      <div style={{ height: '100%', display: 'flex', flexDirection: 'column', background: '#f5f5f5', fontFamily: 'sans-serif' }}>
+        {/* Status bar */}
+        <div style={{ height: 38, background: '#1a1a1a', flexShrink: 0 }} />
+
+        {/* Header */}
+        <div style={{ padding: '10px 12px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0, background: '#f5f5f5' }}>
+          <div style={{ fontSize: 12, fontWeight: 700, color: '#0A0F1E' }}>Inbox</div>
+          <div style={{ fontSize: 8, fontWeight: 600, color: '#fff', background: '#4A9FFF', padding: '3px 8px', borderRadius: 10 }}>
+            3 New
+          </div>
+        </div>
+
+        {/* Lead cards */}
+        <div style={{ flex: 1, padding: '0 8px 8px', display: 'flex', flexDirection: 'column', gap: 8, overflow: 'hidden' }}>
+          {leads.map((lead) => (
+            <div
+              key={lead.name}
+              style={{
+                background: '#fff',
+                borderRadius: 10,
+                padding: '10px 10px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 8,
+                boxShadow: '0 1px 4px rgba(0,0,0,0.06)',
+              }}
+            >
+              <div style={{ width: 32, height: 32, borderRadius: '50%', background: '#4A9FFF', flexShrink: 0 }} />
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: 10, fontWeight: 700, color: '#0A0F1E', marginBottom: 2 }}>{lead.name}</div>
+                <div style={{ fontSize: 8.5, color: '#6B7280', lineHeight: 1.4, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  {lead.message}
+                </div>
+              </div>
+              <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#4A9FFF', flexShrink: 0 }} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </PhoneFrame>
+  )
+}
+
+/* ─── Business phone incoming call screen (Section 7) ─────────────────────────── */
+
+function BusinessPhoneScreen() {
+  return (
+    <PhoneFrame screenClass="phone-screen-business">
+      <div style={{ height: '100%', display: 'flex', flexDirection: 'column', background: '#1a1a1a', fontFamily: 'sans-serif' }}>
+        {/* Status bar */}
+        <div style={{ height: 38, background: '#1a1a1a', flexShrink: 0 }} />
+
+        {/* Call content */}
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0 16px' }}>
+          <div style={{ fontSize: 8, fontWeight: 600, color: '#4A9FFF', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 16 }}>
+            BUSINESS LINE
+          </div>
+          <div style={{ width: 50, height: 50, borderRadius: '50%', background: '#4A9FFF', marginBottom: 12 }} />
+          <div style={{ fontSize: 14, fontWeight: 700, color: '#fff', marginBottom: 6 }}>James W.</div>
+          <div style={{ fontSize: 10, color: '#9CA3AF' }}>Incoming Call</div>
+        </div>
+
+        {/* Answer / End buttons */}
+        <div style={{ padding: '0 0 36px', display: 'flex', justifyContent: 'center', gap: 48, flexShrink: 0 }}>
+          <div style={{ width: 32, height: 32, borderRadius: '50%', background: '#EF4444' }} />
+          <div style={{ width: 32, height: 32, borderRadius: '50%', background: '#22C55E' }} />
+        </div>
+      </div>
+    </PhoneFrame>
+  )
+}
+
 /* ─── Main export ────────────────────────────────────────────────────────────── */
 
 export default function FeatureDetailSections() {
@@ -780,6 +863,76 @@ export default function FeatureDetailSections() {
           />
         </ul>
         <ViewDemoBtn href="/products/campaigns" />
+      </FeatureSection>
+
+      {/* ── Section 6: Business Dashboard App — Phone RIGHT ── */}
+      <FeatureSection id="feature-app" reverse device={<AppScreen />}>
+        <h3
+          className="font-syne font-extrabold text-3xl sm:text-4xl mb-3"
+          style={{ color: '#0A0F1E', letterSpacing: '-0.025em', lineHeight: 1.1 }}
+        >
+          Business Dashboard App
+        </h3>
+        <p
+          className="text-base sm:text-lg italic mb-8"
+          style={{ color: '#6B7280', fontFamily: 'var(--font-dm-sans)', fontWeight: 300 }}
+        >
+          Your business in your pocket — manage every lead, message, and job from anywhere, any time.
+        </p>
+        <ul className="flex flex-col gap-6 mb-8">
+          <BulletItem
+            title="Every Lead in One Place"
+            desc="New calls, texts, and form submissions all land in one inbox. No more jumping between apps trying to piece together who reached out."
+          />
+          <BulletItem
+            title="Reply Instantly, From Anywhere"
+            desc="Whether you're on a roof or in your truck, you can respond to a new lead in seconds from your phone."
+          />
+          <BulletItem
+            title="See Your Full Pipeline at a Glance"
+            desc="Know exactly who's new, who needs a follow-up, and who's ready to book — without digging through missed calls."
+          />
+          <BulletItem
+            title="Your Whole Business, In Your Pocket"
+            desc="No laptop needed. Run your operation like a pro from the same phone you already carry."
+          />
+        </ul>
+        <ViewDemoBtn href="/products/app" />
+      </FeatureSection>
+
+      {/* ── Section 7: Dedicated Business Phone — Phone LEFT ── */}
+      <FeatureSection id="feature-phone" device={<BusinessPhoneScreen />}>
+        <h3
+          className="font-syne font-extrabold text-3xl sm:text-4xl mb-3"
+          style={{ color: '#0A0F1E', letterSpacing: '-0.025em', lineHeight: 1.1 }}
+        >
+          Dedicated Business Phone
+        </h3>
+        <p
+          className="text-base sm:text-lg italic mb-8"
+          style={{ color: '#6B7280', fontFamily: 'var(--font-dm-sans)', fontWeight: 300 }}
+        >
+          A real business number, fully included — so customers always reach you professionally and your personal phone stays personal.
+        </p>
+        <ul className="flex flex-col gap-6 mb-8">
+          <BulletItem
+            title="Keep Work and Personal Separate"
+            desc="Clients reach a real business number. Your personal cell stays yours. No more mixing the two."
+          />
+          <BulletItem
+            title="Covered in Your Monthly Plan"
+            desc="A standalone business line runs $25–$40/mo on its own. We cover that cost inside your plan. Nothing extra."
+          />
+          <BulletItem
+            title="Plugged Into Every Automation"
+            desc="The missed call text-back, lead follow-ups, and review requests all route through this number. One consistent line, everything connected."
+          />
+          <BulletItem
+            title="Looks and Feels Professional"
+            desc="Calling a dedicated business number builds trust before you even pick up. It signals you're running a real operation."
+          />
+        </ul>
+        <ViewDemoBtn href="/products/business-phone" />
       </FeatureSection>
     </>
   )
