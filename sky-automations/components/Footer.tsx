@@ -8,6 +8,8 @@ const productLinks = [
   { label: 'Local SEO', href: '/products/local-seo' },
   { label: '5-Star Review Funnel', href: '/products/reviews' },
   { label: 'One-Click Marketing Campaigns', href: '/products/campaigns' },
+  { label: 'Business Dashboard App', href: '/products/app' },
+  { label: 'Dedicated Business Phone', href: '/products/business-phone' },
 ]
 
 const companyLinks = [

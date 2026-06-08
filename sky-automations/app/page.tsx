@@ -76,6 +76,8 @@ const checklistItems = [
   'Local SEO + Google profile optimization',
   'Website chat to text setup',
   'One-click marketing campaigns',
+  'Business dashboard app',
+  'Dedicated business phone number',
 ]
 
 // ─── Homepage ─────────────────────────────────────────────────────────────────
@@ -738,7 +740,7 @@ export default function HomePage() {
             >
               {/* Strikethrough retail value */}
               <p className="mb-4 text-sm" style={{ color: '#9CA3AF', fontFamily: 'var(--font-dm-sans)' }}>
-                <span style={{ textDecoration: 'line-through' }}>$2,037/mo</span>
+                <span style={{ textDecoration: 'line-through' }}>$2,169/mo</span>
                 <span className="ml-1.5">if purchased separately</span>
               </p>
 

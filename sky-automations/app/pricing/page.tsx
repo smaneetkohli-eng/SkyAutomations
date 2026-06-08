@@ -44,6 +44,16 @@ const expandedFeatures = [
     value: '$247/mo value',
     desc: 'Pre-built referral and repeat customer campaigns you can activate with a single click. Built to generate more work from your existing happy customers.',
   },
+  {
+    title: 'Business Dashboard App',
+    value: '$97/mo value',
+    desc: 'Every lead, text, and form submission in one inbox on your phone. Respond instantly, track your pipeline, and run your business from anywhere.',
+  },
+  {
+    title: 'Dedicated Business Phone',
+    value: '$35/mo value',
+    desc: 'A real business number for calls and texts — fully included in your plan. Keeps work separate from your personal cell and powers every automation.',
+  },
 ]
 
 
@@ -206,7 +216,7 @@ export default function PricingPage() {
               className="text-sm mb-1"
               style={{ color: '#9CA3AF', fontFamily: 'var(--font-dm-sans)' }}
             >
-              <span style={{ textDecoration: 'line-through' }}>$2,037/mo</span>
+              <span style={{ textDecoration: 'line-through' }}>$2,169/mo</span>
               <span className="ml-1.5">if purchased separately</span>
             </p>
 

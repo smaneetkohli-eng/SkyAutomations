@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Monitor, PhoneMissed, Search, Star, Megaphone, ChevronDown } from 'lucide-react'
+import { Monitor, PhoneMissed, Search, Star, Megaphone, Inbox, Smartphone, ChevronDown } from 'lucide-react'
 
 const productItems = [
   {
@@ -36,6 +36,18 @@ const productItems = [
     desc: 'Re-engage past customers instantly',
     href: '/products/campaigns',
     icon: Megaphone,
+  },
+  {
+    label: 'Business Dashboard App',
+    desc: 'Manage every lead and message from your phone',
+    href: '/products/app',
+    icon: Inbox,
+  },
+  {
+    label: 'Dedicated Business Phone',
+    desc: 'A professional number, fully included in your plan',
+    href: '/products/business-phone',
+    icon: Smartphone,
   },
 ]
 
