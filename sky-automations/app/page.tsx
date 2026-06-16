@@ -750,7 +750,7 @@ export default function HomePage() {
                   className="font-syne"
                   style={{ fontSize: 72, fontWeight: 800, color: '#0A0F1E', lineHeight: 1 }}
                 >
-                  $297
+                  $179
                 </span>
                 <span
                   className="pb-2 text-xl"

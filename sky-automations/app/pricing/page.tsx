@@ -16,7 +16,7 @@ const expandedFeatures = [
   },
   {
     title: 'AI Missed Call Text-Back',
-    value: '$297/mo value',
+    value: '$179/mo value',
     desc: 'When you miss a call, our AI automatically sends a text to that number within seconds. It keeps the conversation alive so you can respond when you get off the job.',
   },
   {
@@ -60,7 +60,7 @@ const expandedFeatures = [
 export default function PricingPage() {
   const [isAnnual, setIsAnnual] = useState(false)
 
-  const monthlyPrice = 297
+  const monthlyPrice = 179
   const annualPrice = 237
 
   return (
