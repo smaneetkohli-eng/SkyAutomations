@@ -61,7 +61,7 @@ export default function PricingPage() {
   const [isAnnual, setIsAnnual] = useState(false)
 
   const monthlyPrice = 179
-  const annualPrice = 237
+  const annualPrice = 159
 
   return (
     <>
